@@ -3,6 +3,7 @@
 Update as I go
 
 Created layout that keeps estimating logic testable and separate from game layer.
+```
 blockbid/
 ├── README.md                 # problem, scope, demo GIF, quickstart
 ├── DESIGN.md                 # decisions and tradeoffs, updated as you go
@@ -40,7 +41,7 @@ blockbid/
 │   └── single_room/          # sample input plus expected estimate
 └── docs/
     └── architecture.md       # one diagram: adapter -> mapping -> core -> export
-
+```
 Reasoning:
 core/ never imports game code. The estimator takes a plain list of block counts and returns an Estimate, to test with ordinary pytest and no Minecraft running. Reviewers check this first.
 adapters/ is the only place that knows about a specific game. When adding Fortnite or browser version later, just add one new adapter and core/ doesnt change.
